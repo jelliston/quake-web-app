@@ -2,6 +2,13 @@
 
 <ul>
   <% @locations.each do |location| %>
-    <li><%= location %></li>
+    <li><strong><%= location.nickname %></strong></li>
+    <ul>
+      <li>Location name: <%= location.locname %></li>
+      <li>Latitude: <%= location.latitude %></li>
+      <li>Longitude: <%= location.longitude %></li>
+      <li>Maximum reporting radius (KM): <%= location.maxradiuskm %></li>
+      <li>Minimum reporting magnigude: <%= location.minmagnitude %></li>
+    </ul>
   <% end %>
 </ul>
