@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nickname: MyString
+  locname: MyString
+  latitude: 1.5
+  longitude: 1.5
+  maxradiuskm: 1
+  minmagnitude: 9.99
+
+two:
+  nickname: MyString
+  locname: MyString
+  latitude: 1.5
+  longitude: 1.5
+  maxradiuskm: 1
+  minmagnitude: 9.99
