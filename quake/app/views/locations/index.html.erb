@@ -1,14 +1,31 @@
-<h1>Locations</h1>
+<h1><%=pluralize(@locations.size, "Location")%></h1>
 
-<ul>
-  <% @locations.each do |location| %>
-    <li><strong><%= location.nickname %></strong></li>
-    <ul>
-      <li>Location name: <%= location.locname %></li>
-      <li>Latitude: <%= location.latitude %></li>
-      <li>Longitude: <%= location.longitude %></li>
-      <li>Maximum reporting radius (KM): <%= location.maxradiuskm %></li>
-      <li>Minimum reporting magnigude: <%= location.minmagnitude %></li>
-    </ul>
-  <% end %>
-</ul>
+<% @locations.each do |location| %>
+  <article class="locations">
+    <header>
+      <h2><%= location.nickname.capitalize.to_s %></h2>
+    </header>
+    <table>
+      <tr>
+        <th>Location name:</th>
+        <td><%= location.locname %></td>
+      </tr>
+      <tr>
+        <th>Latitude:</th>
+        <td><%= location.latitude %></td>
+      </tr>
+      <tr>
+        <th>Longitude:</th>
+        <td><%= location.longitude %></td>
+      </tr>
+      <tr>
+        <th>Maximum reporting radius (KM):</th>
+        <td><%= location.maxradiuskm %></td>
+      </tr>
+      <tr>
+        <th>Minimum reporting magnigude:</th>
+        <td><%= location.minmagnitude %></td>
+      </tr>
+    </table>
+  </article>
+<% end %>
