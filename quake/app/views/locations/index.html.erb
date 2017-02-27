@@ -3,7 +3,7 @@
 <% @locations.each do |location| %>
   <article class="locations">
     <header>
-      <h2><%= location.nickname.capitalize.to_s %></h2>
+      <h2><%= link_to location.nickname.capitalize.to_s, location_path(location.id) %></h2>
     </header>
     <table>
       <tr>
