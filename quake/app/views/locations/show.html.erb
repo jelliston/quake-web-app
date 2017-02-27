@@ -1,0 +1,15 @@
+<article class="locations">
+  <header>
+    <h1><%= @location.nickname.capitalize.to_s %></h1>
+  </header>
+  <h3>Location</h3>
+  <p><%= @location.locname %></p>
+  <h3>Latitude</h3>
+  <p><%= @location.latitude %></p>
+  <h3>Longitude</h3>
+  <p><%= @location.longitude %></p>
+  <h3>Maximum reporting radius</h3>
+  <p><%= @location.maxradiuskm %></p>
+  <h3>Minimum reporting magnitude</h3>
+  <p><%= @location.minmagnitude %></p>
+</article>
