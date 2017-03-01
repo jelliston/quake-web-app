@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root "locations#index"
   get "locations" => "locations#index"
   get "locations/:id" => "locations#show", as: "location"
+  get "locations/:id/edit" => "locations#edit", as: "edit_location"
 
 end

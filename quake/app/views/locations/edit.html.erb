@@ -1,0 +1,32 @@
+<h1>Location nickname: <%= @location.nickname.capitalize %></h1>
+
+<%= form_for @location do |f| %>
+  <p>
+    <%= f.label :nickname %>
+    <%= f.text_field :nickname %>
+  </p>
+  <p>
+    <%= f.label "Location (place)" %>
+    <%= f.text_field :locname %>
+  </p>
+  <p>
+    <%= f.label :latitude %>
+    <%= f.number_field :latitude %>
+  </p>
+  <p>
+    <%= f.label :longitude %>
+    <%= f.number_field :longitude %>
+  </p>
+  <p>
+    <%= f.label "Maximum reporting radius (KM)" %>
+    <%= f.number_field :maxradiuskm %>
+  </p>
+  <p>
+    <%= f.label "Minimum reporting magnitude" %>
+    <%= f.number_field :minmagnitude %>
+  </p>
+<p>
+  <%= f.submit %> 
+</p>
+
+<% end %>
