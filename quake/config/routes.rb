@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get "locations" => "locations#index"
   get "locations/:id" => "locations#show", as: "location"
   get "locations/:id/edit" => "locations#edit", as: "edit_location"
+  patch "locations/:id" => "locations#update"
 
 end
