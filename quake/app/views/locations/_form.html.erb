@@ -24,8 +24,8 @@
     <%= f.number_field :minmagnitude %>
   </p>
 <p>
-  <%= f.submit %> |
-  <%= link_to "Cancel", locations_path %>
+  <%= f.submit :Submit, class: 'btn btn-success' %>
+  <%= link_to "Cancel", locations_path, class: "btn btn-primary" %>
 </p>
 
 <% end %>

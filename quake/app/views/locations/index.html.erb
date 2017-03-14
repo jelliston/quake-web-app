@@ -1,31 +1,50 @@
-<h1><%=pluralize(@locations.size, "Location")%></h1>
+<h1><%=pluralize(@locations.size, "Location")%></h1><br/>
 
 <% @locations.each do |location| %>
-  <article class="locations">
-    <header>
-      <h2><%= link_to location.nickname.capitalize.to_s, location_path(location.id) %></h2>
-    </header>
-    <table>
-      <tr>
-        <th>Location name:</th>
-        <td><%= location.locname %></td>
-      </tr>
-      <tr>
-        <th>Latitude:</th>
-        <td><%= location.latitude %></td>
-      </tr>
-      <tr>
-        <th>Longitude:</th>
-        <td><%= location.longitude %></td>
-      </tr>
-      <tr>
-        <th>Maximum reporting radius (KM):</th>
-        <td><%= location.maxradiuskm %></td>
-      </tr>
-      <tr>
-        <th>Minimum reporting magnigude:</th>
-        <td><%= location.minmagnitude %></td>
-      </tr>
-    </table>
-  </article>
+
+<div class="container-fluid">
+  <div class="row">
+     <div class="col-md-6">
+       <div class="panel panel-default">
+         <div class="panel-heading">
+           <h4 class="panel-title">
+               <span class="fa-fw fa fa-phone"></span> <%= link_to location.nickname.capitalize.to_s, location_path(location.id) %>
+           </h4>
+         </div>
+         <div class="panel-body collapse in" id="collapsePanel">
+           <table class="table table-bordered">
+             <tbody>
+               <tr>
+                 <th scope="row">Place name:</th>
+                 <td><%= location.locname %></td>
+               </tr>
+               <tr>
+                 <th scope="row">Latitude:</th>
+                 <td><%= location.latitude %></td>
+               </tr>
+               <tr>
+                 <th scope="row">Longitude:</th>
+                 <td><%= location.longitude %></td>
+               </tr>
+               <tr>
+                 <th scope="row">Maximum reporting radius (KM):</th>
+                 <td><%= location.maxradiuskm %></td>
+               </tr>
+               <tr>
+                 <th scope="row">Minimum reporting magnigude:</th>
+                 <td><%= location.minmagnitude %></td>
+               </tr>
+             </tbody>
+          </table>
+          <%= link_to "Edit", edit_location_path(location), class: "btn btn-primary" %>
+          <%= link_to "Delete", location_path(location), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+         </div>
+       </div><!--/panel-->
+
+     </div><!--/col-->
+     <div class="col-md-6"></div>
+
+  </div><!--/row-->
+</div>
+
 <% end %>
