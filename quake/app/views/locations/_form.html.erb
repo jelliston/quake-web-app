@@ -17,11 +17,11 @@
   </p>
   <p>
     <%= f.label "Maximum reporting radius (KM)" %>
-    <%= f.number_field :maxradiuskm %>
+    <%= f.select(:maxradiuskm, [100, 200, 300, 400, 500]) %>
   </p>
   <p>
     <%= f.label "Minimum reporting magnitude" %>
-    <%= f.number_field :minmagnitude %>
+    <%= f.select(:minmagnitude, [2.5, 3.5, 4.5, 5]) %>
   </p>
 <p>
   <%= f.submit :Submit, class: 'btn btn-success' %>
