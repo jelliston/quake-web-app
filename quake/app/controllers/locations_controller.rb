@@ -13,8 +13,11 @@ class LocationsController < ApplicationController
 
   def update
     @location = Location.find(params[:id])
-    @location.update(location_params)
-    redirect_to location_path(@location)
+    if @location.update(location_params)
+      redirect_to location_path(@location)
+    else
+      render :edit
+    end
   end
 
   def new
@@ -23,8 +26,11 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new(location_params)
-    @location.save
-    redirect_to location_path(@location)
+    if @location.save
+      redirect_to location_path(@location)
+    else
+      render :new
+    end
   end
 
   def destroy

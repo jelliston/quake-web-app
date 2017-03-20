@@ -1,0 +1,17 @@
+<% if @location.errors.any? %>
+  <div class="alert alert-warning" role="alert">
+    <header>
+      <h3>
+        Oops! The <%= @location.class.name.humanize.downcase %> could not be saved. 
+      </h3>
+     <h4>
+       Please correct the following <%= pluralize(@location.errors.count, "error") %>:
+     </h4>
+   </header>
+    <ul>
+      <% @location.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

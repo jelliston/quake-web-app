@@ -1,4 +1,7 @@
 <%= form_for @location do |f| %>
+
+  <%= render 'shared/errors' %>
+
   <p>
     <%= f.label :nickname %>
     <%= f.text_field :nickname %>
