@@ -14,6 +14,7 @@ class LocationsController < ApplicationController
   def update
     @location = Location.find(params[:id])
     if @location.update(location_params)
+      flash[:success] = "Location successfully updated!"
       redirect_to location_path(@location)
     else
       render :edit
@@ -27,6 +28,7 @@ class LocationsController < ApplicationController
   def create
     @location = Location.new(location_params)
     if @location.save
+      flash[:success] = "Location successfully created!"
       redirect_to location_path(@location)
     else
       render :new
@@ -36,11 +38,12 @@ class LocationsController < ApplicationController
   def destroy
     @location = Location.find(params[:id])
     @location.destroy
+    flash[:danger] = "Location successfully deleted."
     redirect_to locations_path
   end
 
 private
   def location_params
-    params.require(:location).permit(:nickname, :locname, :latitude, :longitude, :minradiuskm, :maxmagnitude)
+    params.require(:location).permit(:nickname, :locname, :latitude, :longitude, :maxradiuskm, :minmagnitude)
   end
 end
